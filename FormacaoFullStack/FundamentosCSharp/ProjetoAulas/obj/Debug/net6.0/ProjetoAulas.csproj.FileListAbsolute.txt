@@ -1,0 +1,15 @@
+C:\FormacaoFullStack\ProjetoAulas\bin\Debug\net6.0\ProjetoAulas.exe
+C:\FormacaoFullStack\ProjetoAulas\bin\Debug\net6.0\ProjetoAulas.deps.json
+C:\FormacaoFullStack\ProjetoAulas\bin\Debug\net6.0\ProjetoAulas.runtimeconfig.json
+C:\FormacaoFullStack\ProjetoAulas\bin\Debug\net6.0\ProjetoAulas.dll
+C:\FormacaoFullStack\ProjetoAulas\bin\Debug\net6.0\ProjetoAulas.pdb
+C:\FormacaoFullStack\ProjetoAulas\obj\Debug\net6.0\ProjetoAulas.csproj.AssemblyReference.cache
+C:\FormacaoFullStack\ProjetoAulas\obj\Debug\net6.0\ProjetoAulas.GeneratedMSBuildEditorConfig.editorconfig
+C:\FormacaoFullStack\ProjetoAulas\obj\Debug\net6.0\ProjetoAulas.AssemblyInfoInputs.cache
+C:\FormacaoFullStack\ProjetoAulas\obj\Debug\net6.0\ProjetoAulas.AssemblyInfo.cs
+C:\FormacaoFullStack\ProjetoAulas\obj\Debug\net6.0\ProjetoAulas.csproj.CoreCompileInputs.cache
+C:\FormacaoFullStack\ProjetoAulas\obj\Debug\net6.0\ProjetoAulas.dll
+C:\FormacaoFullStack\ProjetoAulas\obj\Debug\net6.0\refint\ProjetoAulas.dll
+C:\FormacaoFullStack\ProjetoAulas\obj\Debug\net6.0\ProjetoAulas.pdb
+C:\FormacaoFullStack\ProjetoAulas\obj\Debug\net6.0\ProjetoAulas.genruntimeconfig.cache
+C:\FormacaoFullStack\ProjetoAulas\obj\Debug\net6.0\ref\ProjetoAulas.dll

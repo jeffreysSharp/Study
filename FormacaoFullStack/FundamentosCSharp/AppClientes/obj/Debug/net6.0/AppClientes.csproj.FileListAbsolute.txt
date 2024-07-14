@@ -1,0 +1,15 @@
+C:\FormacaoFullStack\AppClientes\bin\Debug\net6.0\AppClientes.exe
+C:\FormacaoFullStack\AppClientes\bin\Debug\net6.0\AppClientes.deps.json
+C:\FormacaoFullStack\AppClientes\bin\Debug\net6.0\AppClientes.runtimeconfig.json
+C:\FormacaoFullStack\AppClientes\bin\Debug\net6.0\AppClientes.dll
+C:\FormacaoFullStack\AppClientes\bin\Debug\net6.0\AppClientes.pdb
+C:\FormacaoFullStack\AppClientes\obj\Debug\net6.0\AppClientes.csproj.AssemblyReference.cache
+C:\FormacaoFullStack\AppClientes\obj\Debug\net6.0\AppClientes.GeneratedMSBuildEditorConfig.editorconfig
+C:\FormacaoFullStack\AppClientes\obj\Debug\net6.0\AppClientes.AssemblyInfoInputs.cache
+C:\FormacaoFullStack\AppClientes\obj\Debug\net6.0\AppClientes.AssemblyInfo.cs
+C:\FormacaoFullStack\AppClientes\obj\Debug\net6.0\AppClientes.csproj.CoreCompileInputs.cache
+C:\FormacaoFullStack\AppClientes\obj\Debug\net6.0\AppClientes.dll
+C:\FormacaoFullStack\AppClientes\obj\Debug\net6.0\refint\AppClientes.dll
+C:\FormacaoFullStack\AppClientes\obj\Debug\net6.0\AppClientes.pdb
+C:\FormacaoFullStack\AppClientes\obj\Debug\net6.0\AppClientes.genruntimeconfig.cache
+C:\FormacaoFullStack\AppClientes\obj\Debug\net6.0\ref\AppClientes.dll
