@@ -1,0 +1,12 @@
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\bin\Debug\net6.0\DemoBlazorAsm.Shared.deps.json
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\bin\Debug\net6.0\DemoBlazorAsm.Shared.dll
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\bin\Debug\net6.0\DemoBlazorAsm.Shared.pdb
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\obj\Debug\net6.0\DemoBlazorAsm.Shared.csproj.AssemblyReference.cache
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\obj\Debug\net6.0\DemoBlazorAsm.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\obj\Debug\net6.0\DemoBlazorAsm.Shared.AssemblyInfoInputs.cache
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\obj\Debug\net6.0\DemoBlazorAsm.Shared.AssemblyInfo.cs
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\obj\Debug\net6.0\DemoBlazorAsm.Shared.csproj.CoreCompileInputs.cache
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\obj\Debug\net6.0\DemoBlazorAsm.Shared.dll
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\obj\Debug\net6.0\refint\DemoBlazorAsm.Shared.dll
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\obj\Debug\net6.0\DemoBlazorAsm.Shared.pdb
+C:\Study\FormacaoFullStack\DemoBlazorAsm\DemoBlazorAsm\Shared\obj\Debug\net6.0\ref\DemoBlazorAsm.Shared.dll
