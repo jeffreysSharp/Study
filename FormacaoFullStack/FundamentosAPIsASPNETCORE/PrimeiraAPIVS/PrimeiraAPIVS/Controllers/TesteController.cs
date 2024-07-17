@@ -39,6 +39,7 @@ namespace PrimeiraAPIVS.Controllers
 
         [HttpDelete("id:int")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Delete(int id)
         { 
             return NoContent(); 
