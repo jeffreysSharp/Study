@@ -3,31 +3,33 @@ using Microsoft.AspNetCore.Mvc;
 namespace PrimeiraAPIVS.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[api/minha-controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+        public WeatherForecastController()
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet()]
+        public IActionResult Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return Ok();
         }
+
+        [HttpGet("{id:int}/dado/{id2:}")]
+        public IActionResult Get2(int Id, int Id2)
+        {
+            return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult Get3()
+        {
+            return Ok();
+        }
+
+
+
     }
 }
