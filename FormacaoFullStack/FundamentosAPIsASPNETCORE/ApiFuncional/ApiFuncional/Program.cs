@@ -18,14 +18,29 @@ builder.Services.AddControllers()
 
    });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Development", builder =>
+                     builder.AllowAnyOrigin()
+                     .AllowAnyMethod()
+                     .AllowAnyHeader()
+    );
+
+    options.AddPolicy("Production", builder =>
+        builder
+        .WithOrigins("https://localhost:9000")
+        .WithMethods("POST")
+        .AllowAnyHeader());
+});
+
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSwaggerGen( c =>
+builder.Services.AddSwaggerGen(c =>
 {
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = "Insira o Token desta maneira: Bearer {seu token}",
-        Name =  "Autorizathion", 
+        Name = "Autorizathion",
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
@@ -33,7 +48,7 @@ builder.Services.AddSwaggerGen( c =>
     });
 
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
+   {
         {
             new OpenApiSecurityScheme
             {
@@ -43,9 +58,9 @@ builder.Services.AddSwaggerGen( c =>
                     Id = "Bearer"
                 }
             },
-            new string[] {}        
+            new string[] {}
         }
-    });
+   });
 
 });
 
@@ -70,7 +85,8 @@ builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options => {
+}).AddJwtBearer(options =>
+{
     options.RequireHttpsMetadata = true;
     options.SaveToken = true;
     options.TokenValidationParameters = new TokenValidationParameters
@@ -92,6 +108,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseCors("Development");
+}
+else
+{
+    app.UseCors("Production");
 }
 
 app.UseHttpsRedirection();
