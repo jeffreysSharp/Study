@@ -33,6 +33,18 @@ namespace ApiFuncional.Controllers
         [HttpPost]
         public async Task<ActionResult<Produto>> PostProduto(Produto produto)
         {
+            if(!ModelState.IsValid)
+            {
+                // return BadRequest(ModelState);
+
+                // return ValidationProblem(ModelState);
+
+                return ValidationProblem(new ValidationProblemDetails(ModelState)
+                { 
+                    Title = "Um ou mais erros de validação ocorreram!"
+                });
+            }
+
             _context.Produtos.Add(produto);
             await _context.SaveChangesAsync();
 
