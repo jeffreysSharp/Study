@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ApiFuncional.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiFuncional.Data
 {
@@ -8,6 +9,8 @@ namespace ApiFuncional.Data
         {
 
         }
+
+        public DbSet<Produto> Produtos { get; set; }
 
     }
 }
