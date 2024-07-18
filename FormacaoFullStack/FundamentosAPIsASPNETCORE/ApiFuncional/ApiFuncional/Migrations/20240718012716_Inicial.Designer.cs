@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiFuncional.Migrations
 {
-    [DbContext(typeof(ApiContext))]
+    [DbContext(typeof(ApiDbContext))]
     [Migration("20240718012716_Inicial")]
     partial class Inicial
     {
