@@ -54,6 +54,10 @@ namespace ApiFuncional.Controllers
         [HttpPut]
         public async Task<ActionResult> PutProduto(int id, Produto produto)
         {
+            if(id != produto.Id) return BadRequest();
+
+            if(!ModelState.IsValid) return ValidationProblem(ModelState);
+
             _context.Produtos.Update(produto);
             await _context.SaveChangesAsync();
 
