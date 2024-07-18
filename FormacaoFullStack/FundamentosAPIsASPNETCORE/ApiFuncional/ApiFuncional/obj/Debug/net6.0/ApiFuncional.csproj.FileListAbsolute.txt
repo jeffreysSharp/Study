@@ -59,3 +59,4 @@ C:\Study\FormacaoFullStack\FundamentosAPIsASPNETCORE\ApiFuncional\ApiFuncional\b
 C:\Study\FormacaoFullStack\FundamentosAPIsASPNETCORE\ApiFuncional\ApiFuncional\obj\Debug\net6.0\ApiFuncional.genruntimeconfig.cache
 C:\Study\FormacaoFullStack\FundamentosAPIsASPNETCORE\ApiFuncional\ApiFuncional\obj\Debug\net6.0\ref\ApiFuncional.dll
 C:\Study\FormacaoFullStack\FundamentosAPIsASPNETCORE\ApiFuncional\ApiFuncional\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Study\FormacaoFullStack\FundamentosAPIsASPNETCORE\ApiFuncional\ApiFuncional\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
