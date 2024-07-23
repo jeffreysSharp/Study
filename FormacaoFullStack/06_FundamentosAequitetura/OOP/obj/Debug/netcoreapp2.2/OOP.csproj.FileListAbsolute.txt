@@ -1,0 +1,13 @@
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\bin\Debug\netcoreapp2.2\OOP.deps.json
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\bin\Debug\netcoreapp2.2\OOP.runtimeconfig.json
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\bin\Debug\netcoreapp2.2\OOP.runtimeconfig.dev.json
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\bin\Debug\netcoreapp2.2\OOP.dll
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\bin\Debug\netcoreapp2.2\OOP.pdb
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\obj\Debug\netcoreapp2.2\OOP.csproj.AssemblyReference.cache
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\obj\Debug\netcoreapp2.2\OOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\obj\Debug\netcoreapp2.2\OOP.AssemblyInfoInputs.cache
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\obj\Debug\netcoreapp2.2\OOP.AssemblyInfo.cs
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\obj\Debug\netcoreapp2.2\OOP.csproj.CoreCompileInputs.cache
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\obj\Debug\netcoreapp2.2\OOP.dll
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\obj\Debug\netcoreapp2.2\OOP.pdb
+C:\Study\FormacaoFullStack\06_FundamentosAequitetura\OOP\obj\Debug\netcoreapp2.2\OOP.genruntimeconfig.cache

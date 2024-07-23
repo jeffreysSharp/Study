@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "iX+Rv3n0dWEtTl6klDxAP1R1PBHXf/z1eGm6BJnmHHQaWK3eEPdV65Jz3TyjojXgiiNa7RjM4SOhsWrag0KpOA==",
+  "success": true,
+  "projectFilePath": "C:\\Study\\FormacaoFullStack\\06_FundamentosAequitetura\\DesignPatterns\\DesignPatterns.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jeferson.almeida\\.nuget\\packages\\microsoft.netcore.app\\2.2.0\\microsoft.netcore.app.2.2.0.nupkg.sha512",
+    "C:\\Users\\jeferson.almeida\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.2.0\\microsoft.netcore.dotnetapphost.2.2.0.nupkg.sha512",
+    "C:\\Users\\jeferson.almeida\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.2.0\\microsoft.netcore.dotnethostpolicy.2.2.0.nupkg.sha512",
+    "C:\\Users\\jeferson.almeida\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.2.0\\microsoft.netcore.dotnethostresolver.2.2.0.nupkg.sha512",
+    "C:\\Users\\jeferson.almeida\\.nuget\\packages\\microsoft.netcore.platforms\\2.2.0\\microsoft.netcore.platforms.2.2.0.nupkg.sha512",
+    "C:\\Users\\jeferson.almeida\\.nuget\\packages\\microsoft.netcore.targets\\2.0.0\\microsoft.netcore.targets.2.0.0.nupkg.sha512",
+    "C:\\Users\\jeferson.almeida\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
