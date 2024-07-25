@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NerdStore.Core.DomainObjects
 {
-    public interface IAgregateRoot
+    public interface IAggregateRoot
     {
     }
 }

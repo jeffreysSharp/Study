@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NerdStore.Catalogo.Domain
 {
-    public class Produto : Entity, IAgregateRoot
+    public class Produto : Entity, IAggregateRoot
     {
         public Guid CategoriaId { get; set; }
         public string Nome { get; private set; }

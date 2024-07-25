@@ -8,6 +8,14 @@ namespace NerdStore.Catalogo.Domain
         public string  Nome { get; set; }
         public int Codigo { get; set; }
 
+        // EF Relation
+        public ICollection<Produto> Produtos { get; set; }
+
+        public Categoria()
+        {
+
+        }
+
         public Categoria(string nome, int codigo)
         {
             Nome = nome;
