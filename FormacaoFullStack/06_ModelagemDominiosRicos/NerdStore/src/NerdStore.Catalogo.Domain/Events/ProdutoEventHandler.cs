@@ -20,7 +20,7 @@ namespace NerdStore.Catalogo.Domain.Events
         {
             var produto = await _produtoRepository.ObterPorId(mensagem.AggregateId);
 
-            // Enviar e-mail para aquisição de mais produto
+            // Enviar e-mail para aquisição de mais produto 
 
         } 
     }
