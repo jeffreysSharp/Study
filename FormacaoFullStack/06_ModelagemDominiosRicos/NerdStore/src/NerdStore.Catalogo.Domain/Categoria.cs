@@ -5,7 +5,7 @@ namespace NerdStore.Catalogo.Domain
 {
     public class Categoria : Entity
     {
-        public string  Nome { get; set; }
+        public string Nome { get; set; }
         public int Codigo { get; set; }
 
         // EF Relation

@@ -16,7 +16,7 @@ namespace NerdStore.Catalogo.Domain
         public decimal Valor { get; set; }
         public bool Ativo { get; private set; }
         public DateTime DataCadastro { get; private set; }
-        public string Imagem { get; private set; }
+        public string? Imagem { get; private set; }
         public int QuantidadeEstoque { get; private set; }
         public Dimensoes Dimensoes { get; set; }
         public Categoria Categoria { get; set; }
@@ -64,7 +64,7 @@ namespace NerdStore.Catalogo.Domain
         }
 
         public bool PussuiEstoque(int quantidade)
-        { 
+        {
             return QuantidadeEstoque >= quantidade;
         }
 
