@@ -18,7 +18,7 @@ public class ProdutoTeste {
 		System.out.println(produto1.nome);
 		System.out.println(produto2.nome);
 
-		double precoFinal1 = produto1.precoComDesconto(0);		
+		double precoFinal1 = produto1.precoComDesconto();		
 		double precoFinal2 = produto2.precoComDesconto(0.1);
 		double mediaCarrinho = (precoFinal1 + precoFinal2) / 2;
 
