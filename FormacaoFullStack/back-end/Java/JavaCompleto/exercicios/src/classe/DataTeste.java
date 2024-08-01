@@ -4,20 +4,26 @@ public class DataTeste {
 	
 	public static void main(String[] args) {
 
-		Data data1 = new Data();
-		data1.dia = 7;
-		data1.mes = 11;
-		data1.ano = 2021;
+		Data d1 = new Data();
+		d1.dia = 7;
+		d1.mes = 11;
+		d1.ano = 2021;
 		
-		System.out.printf("%d/%d/%d\n", data1.dia, data1.mes, data1.ano);
+		
 		
 		// Verificar var não funciona
 		// var data2 = new Data();
-		Data data2 = new Data();
-		data2.dia = 31;
-		data2.mes = 12;
-		data2.ano = 2020;
+		Data d2 = new Data();
+		d2.dia = 31;
+		d2.mes = 12;
+		d2.ano = 2020;
 		
-		System.out.printf("%d/%d/%d\n", data2.dia, data2.mes, data2.ano);
+		String dataFormatada1 = d1.obterDataFormatada();
+		
+		System.out.println(dataFormatada1);
+		System.out.println(d2.obterDataFormatada());
+		
+		d1.imprimirDataFormatada();
+		d2.imprimirDataFormatada();
 	}
 }
