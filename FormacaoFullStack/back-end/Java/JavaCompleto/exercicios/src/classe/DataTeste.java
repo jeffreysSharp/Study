@@ -5,18 +5,11 @@ public class DataTeste {
 	public static void main(String[] args) {
 
 		Data d1 = new Data();
-		d1.dia = 7;
-		d1.mes = 11;
-		d1.ano = 2021;
-		
-		
+		d1._ano = 2021;
 		
 		// Verificar var não funciona
 		// var data2 = new Data();
-		Data d2 = new Data();
-		d2.dia = 31;
-		d2.mes = 12;
-		d2.ano = 2020;
+		Data d2 = new Data(31, 12, 2020);	
 		
 		String dataFormatada1 = d1.obterDataFormatada();
 		
