@@ -12,8 +12,8 @@ public class Ferrari extends Carro implements Esportivo, Luxo {
 	public Ferrari(int velocidadeMaxima) {
 		super(velocidadeMaxima);
 		setDelta(15);
-	}
-
+	}	
+	
 	@Override
 	public void ligarTurbo() {
 		ligarTurbo = true;
