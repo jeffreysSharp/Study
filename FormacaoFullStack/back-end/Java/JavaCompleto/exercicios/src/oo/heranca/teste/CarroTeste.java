@@ -21,6 +21,8 @@ public class CarroTeste {
 		System.out.println();
 		
 		Ferrari c2 = new Ferrari(400);
+		c2.ligarTurbo();
+		c2.ligarAr();
 		
 		c2.acelerar();		
 		c2.frear();
