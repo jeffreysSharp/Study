@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 public class Aluno {
 
-	final String nome;
+	public String nome;
+	public double nota;
 	final ArrayList<Curso> cursos = new ArrayList<>();
 	
 
-	Aluno(String nome) {
+	public Aluno(String nome, double nota) {
 		this.nome = nome;
 	
 	}
