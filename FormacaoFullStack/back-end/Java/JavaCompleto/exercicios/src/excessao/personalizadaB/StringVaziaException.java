@@ -1,7 +1,7 @@
-package excessao.personalizadaA;
+package excessao.personalizadaB;
 
 @SuppressWarnings("serial")
-public class StringVaziaException extends IllegalArgumentException {
+public class StringVaziaException extends Exception {
 	
 	private String nomeDoAtributo;
 
