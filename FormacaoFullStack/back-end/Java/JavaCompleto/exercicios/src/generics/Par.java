@@ -1,6 +1,6 @@
 package generics;
 
-public class Par<C, V> {
+public class Par<C, V>  {
 
 	private C chave;
 	private V valor;
@@ -14,8 +14,6 @@ public class Par<C, V> {
 		this.chave = chave;
 		this.valor = valor;
 	}
-
-
 
 	public C getChave() {
 		return chave;
