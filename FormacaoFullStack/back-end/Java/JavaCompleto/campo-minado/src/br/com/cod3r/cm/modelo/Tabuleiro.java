@@ -2,6 +2,9 @@ package br.com.cod3r.cm.modelo;
 
 import java.util.List;
 import java.util.function.Predicate;
+
+import br.com.cod3r.cm.excecao.ExplosaoException;
+
 import java.util.ArrayList;
 
 public class Tabuleiro {
@@ -30,10 +33,17 @@ public class Tabuleiro {
 	}
 	
 	public void alternarMarcacao(int linha, int coluna) {
-		campos.parallelStream()
-				.filter(c -> c.getLinha() == linha && c.getColuna() == coluna)
-				.findFirst()
-				.ifPresent(c -> c.alternarMarcacao());
+		try {
+			campos.parallelStream()
+			.filter(c -> c.getLinha() == linha && c.getColuna() == coluna)
+			.findFirst()
+			.ifPresent(c -> c.alternarMarcacao());	
+		} catch (ExplosaoException e) {
+			campos.forEach(c -> c.setAberto(true));
+			throw e;			
+		}
+		
+		
 	}
 
 	private void gerarCampos() {
