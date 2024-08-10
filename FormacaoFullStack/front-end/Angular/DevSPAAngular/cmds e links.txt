@@ -1,0 +1,15 @@
+npm install -g json-server
+
+json-server --watch produtos.json
+
+
+// Atualizar versões
+npm i npm-check-updates
+ncu
+ncu -u
+
+// Builder
+ng b --prod
+
+// publicação com ivy
+https://docs.angular.lat/guide/ivy
