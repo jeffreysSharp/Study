@@ -3,6 +3,7 @@ package br.com.cod3r.exerciciossb.controllers;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,6 +36,15 @@ public class ProdutoController {
 	public Iterable<Produto> obterProdutos() {
 		return produtoRepository.findAll();
 	}
+
+	/* Não funcionou devido a versão
+	@GetMapping(path = "/pagina/{numeroPagina}/{qtdPagina}")
+	public Iterable<Produto> obterProdutosPorPagina(
+			@PathVariable int numeroPagina,
+			@PathVariable int qtdPagina) {
+		Pageble page = PageRequest.of(numeroPagina, qtdPagina);		
+		return produtoRepository.findAll(page);
+	}*/
 
 	@GetMapping(path = "/{id}")
 	public Optional<Produto> obterProdutoPorId(@PathVariable int id) {
