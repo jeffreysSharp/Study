@@ -23,6 +23,7 @@ public class ProdutoController {
 	@Autowired
 	private ProdutoRepository produtoRepository;
 
+	// @PostMapping
 	@RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
 	public @ResponseBody Produto novoProduto(@Valid Produto produto) {
 		produtoRepository.save(produto);
