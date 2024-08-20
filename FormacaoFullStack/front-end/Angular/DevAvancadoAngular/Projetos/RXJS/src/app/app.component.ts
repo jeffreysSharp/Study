@@ -39,6 +39,14 @@ export class AppComponent implements OnInit {
 
     //   const obs = this.minhaPrimeiraObservable('Eduardo');
     //   obs.subscribe(observer);
+
+    // const obs = this.usuarioObservable('Admin', 'admin@admin.com');
+    // const subs = obs.subscribe(observer);
+
+    // setTimeout(() => {
+    //   subs.unsubscribe();
+    //   console.log('Conexão fechada: ', subs.closed)
+    // }, 3500);
   }
 
   minhaPrimeiraObservable(nome: string) : Observable<string> {
@@ -50,6 +58,38 @@ export class AppComponent implements OnInit {
         subscriber.next('Resposta com delay!');
         }, 5000);
         subscriber.complete();
+      } 
+      else {
+        subscriber.error('Ops! Deu erro!')
+      }
+    })
+  }
+
+  usuarioObservable(nome: string, email: string) : Observable<Usuario> {
+    return new Observable(subscriber => {
+      if(nome === 'Admin') {
+
+        let usuario = new Usuario(nome, email);
+
+        setTimeout(() => {
+          subscriber.next(usuario);
+          }, 1000);
+
+         setTimeout(() => {
+            subscriber.next(usuario);
+         }, 2000);
+
+         setTimeout(() => {
+              subscriber.next(usuario);
+         }, 3000);
+
+         setTimeout(() => {
+             subscriber.next(usuario);
+          }, 4000);
+
+          setTimeout(() => {
+              subscriber.complete();
+           }, 5000);
       } 
       else {
         subscriber.error('Ops! Deu erro!')
@@ -69,6 +109,15 @@ export class AppComponent implements OnInit {
       }
     })
   }
+}
 
+export class Usuario {
 
+  nome: string;
+  email: string;
+
+  constructor(nome: string, email: string) {
+    this.nome = nome;
+    this.email = email;
+  }
 }
