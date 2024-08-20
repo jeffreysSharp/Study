@@ -25,10 +25,20 @@ export class AppComponent implements OnInit {
     // .then(result => console.log(result))
     // .catch(erro => console.log(erro))
       
-    this.minhaPrimeiraObservable('Eduardo')
-    .subscribe(
-      result => console.log(result),
-      erro => console.log(erro));
+    // this.minhaPrimeiraObservable('Eduardo')
+    // .subscribe(
+    //   result => console.log(result),
+    //   erro => console.log(erro),
+    //   complete: () => console.log('Fim!'));
+
+    //   const observer = {
+    //     next: valor => console.log('Next: ', valor),
+    //     error: erro => console.log('Erro', erro),
+    //     complete: () => console.log('Fim!')
+    //   }
+
+    //   const obs = this.minhaPrimeiraObservable('Eduardo');
+    //   obs.subscribe(observer);
   }
 
   minhaPrimeiraObservable(nome: string) : Observable<string> {
@@ -39,6 +49,7 @@ export class AppComponent implements OnInit {
         setTimeout(() => {
         subscriber.next('Resposta com delay!');
         }, 5000);
+        subscriber.complete();
       } 
       else {
         subscriber.error('Ops! Deu erro!')
