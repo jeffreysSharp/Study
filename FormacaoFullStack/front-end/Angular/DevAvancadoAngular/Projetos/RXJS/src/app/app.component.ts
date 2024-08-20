@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -20,10 +21,29 @@ export class AppComponent implements OnInit {
     // this.minhaPromise('Eduardo')
     // .then(result => console.log(result));
 
-    this.minhaPromise('José')
-    .then(result => console.log(result))
-    .catch(erro => console.log(erro))
+    // this.minhaPromise('José')
+    // .then(result => console.log(result))
+    // .catch(erro => console.log(erro))
       
+    this.minhaPrimeiraObservable('Eduardo')
+    .subscribe(
+      result => console.log(result),
+      erro => console.log(erro));
+  }
+
+  minhaPrimeiraObservable(nome: string) : Observable<string> {
+    return new Observable(subscriber => {
+      if(nome === 'Eduardo') {
+        subscriber.next('Olá ' + nome);
+        subscriber.next('Olá de novo! ' + nome);
+        setTimeout(() => {
+        subscriber.next('Resposta com delay!');
+        }, 5000);
+      } 
+      else {
+        subscriber.error('Ops! Deu erro!')
+      }
+    })
   }
   
   minhaPromise(nome: string) : Promise<string>{
