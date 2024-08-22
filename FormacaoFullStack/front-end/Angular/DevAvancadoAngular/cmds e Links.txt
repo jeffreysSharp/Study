@@ -1,1 +1,23 @@
+==1: Creating an Angular project with Angular CLI
+ng new projectName
+
+==2: Installing Bootstrap from NPM
+npm install bootstrap
+*npm i bootstrap@5.3.3
+
+==4: Bootstrap JavaScript Components with ngx-bootstrap
+npom install ngx-bootstrap --save
+
+npm uninstall -g @angular/cli
+npm install -g @angular/cli@7.1.0
+
 ng new RXJS -- minimal=true
+========
+Forms
+ng g c demos\reactiveForms\cadastro
+
+UPDATE
+ng update @angular/cli @angular/core
+
+YARN
+npm install -g yarn
