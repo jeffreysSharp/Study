@@ -4,7 +4,12 @@
    <div class="row mb-3">
         <label for="nome" class="col-sm-2 col-form-label col-form-label-sm">Nome</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control form-control-sm" id="nome" formControlName="nome" placeholder="Nome (Requerido)">
+            <input type="text" class="form-control form-control-sm" id="nome" [ngClass]="{'is-invalid': cadastroForm.get('nome').errors && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched)}" formControlName="nome" placeholder="Nome (Requerido)" required>
+                 <span *ngIf="cadastroForm.get('nome').errors && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched)" class="text-danger">
+                     <p *ngIf="cadastroForm.get('nome').hasError('required')">
+                         Nome é obrigatório!
+                     </p>
+                  </span>
         </div>
    </div>
 
@@ -12,6 +17,11 @@
      <label for="cpf" class="col-sm-2 col-form-label col-form-label-sm">CPF</label>
      <div class="col-sm-10">
         <input type="text" class="form-control form-control-sm" id="cpf" formControlName="cpf" placeholder="CPF (Requerido)">
+        <span *ngIf="cadastroForm.get('cpf').errors && (cadastroForm.get('cpf').dirty || cadastroForm.get('cpf').touched)" class="text-danger">
+          <p *ngIf="cadastroForm.get('cpf').hasError('required')">
+             CPF é obrigatório!
+          </p>
+        </span>
      </div>
   </div>
 
@@ -19,6 +29,14 @@
     <label for="email" class="col-sm-2 col-form-label col-form-label-sm">E-mail</label>
     <div class="col-sm-10">
        <input type="text" class="form-control form-control-sm" id="email" formControlName="email" placeholder="E-mail (Requerido)">
+       <span *ngIf="cadastroForm.get('email').errors && (cadastroForm.get('email').dirty || cadastroForm.get('email').touched)" class="text-danger">
+         <p *ngIf="cadastroForm.get('email').hasError('required')">
+             E-mail é obrigatório!
+         </p>
+         <p *ngIf="cadastroForm.get('email').hasError('email')">
+            E-mail inválido!
+        </p>
+       </span>
     </div>
  </div>
 
@@ -26,20 +44,44 @@
     <label for="senha" class="col-sm-2 col-form-label col-form-label-sm">Senha</label>
     <div class="col-sm-10">
        <input type="text" class="form-control form-control-sm" id="senha" formControlName="senha" placeholder="Senha (Requerido)">
+       <span *ngIf="cadastroForm.get('senha').errors && (cadastroForm.get('senha').dirty || cadastroForm.get('senha').touched)" class="text-danger">
+         <p *ngIf="cadastroForm.get('senha').hasError('required')">
+             Senha é obrigatório!
+         </p>
+       </span>
     </div>
  </div>
 
  <div class="row mb-3">
-    <label for="senha" class="col-sm-2 col-form-label col-form-label-sm">Confirme a Senha</label>
+   <label for="confirmeSenha" class="col-sm-2 col-form-label col-form-label-sm">Confirme a Senha</label>
+   <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="senha" formControlName="confirmeSenha" placeholder="Senha (Requerido)">
+      <span *ngIf="cadastroForm.get('confirmeSenha').errors && (cadastroForm.get('confirmeSenha').dirty || cadastroForm.get('confirmeSenha').touched)" class="text-danger">
+        <p *ngIf="cadastroForm.get('confirmeSenha').hasError('required')">
+          Confirme a Senha é obrigatório!
+        </p>
+      </span>
+   </div>
+</div>
+
+<div class="row mb-3">
+   <div class="col-sm-10">
+      <p>Formulário Válido: {{ cadastroForm.valid }}</p>
+      <p>Formulário Tocado: {{ cadastroForm.touched }}</p>
+      <p>Formulário Sujo: {{ cadastroForm.dirty }}</p>
+      <p>Formulário: {{ formResult }}</p>
+   </div>
+</div>
+
+
+ <div class="row mb-3">
     <div class="col-sm-10">
-       <input type="text" class="form-control form-control-sm" id="confirmeSenha" formControlName="confirmeSenha" placeholder="Confirme a Senha (Requerido)">
+        <button type="submit" id="registrar" class="btn btn-success">Cadastrar</button>
     </div>
  </div>
 
-  <div class="row">    
-    <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </div>
-  </div>
+
+
+
 </form>
 </div>
