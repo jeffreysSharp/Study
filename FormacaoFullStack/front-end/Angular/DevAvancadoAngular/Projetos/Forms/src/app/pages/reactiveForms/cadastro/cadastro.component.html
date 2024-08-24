@@ -1,1 +1,45 @@
-<p>cadastro works!</p>
+<div class="container">
+<form (ngSubmit)="adicionarUsuario()" [formGroup]="cadastroForm">
+   
+   <div class="row mb-3">
+        <label for="nome" class="col-sm-2 col-form-label col-form-label-sm">Nome</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control form-control-sm" id="nome" formControlName="nome" placeholder="Nome (Requerido)">
+        </div>
+   </div>
+
+  <div class="row mb-3">
+     <label for="cpf" class="col-sm-2 col-form-label col-form-label-sm">CPF</label>
+     <div class="col-sm-10">
+        <input type="text" class="form-control form-control-sm" id="cpf" formControlName="cpf" placeholder="CPF (Requerido)">
+     </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="email" class="col-sm-2 col-form-label col-form-label-sm">E-mail</label>
+    <div class="col-sm-10">
+       <input type="text" class="form-control form-control-sm" id="email" formControlName="email" placeholder="E-mail (Requerido)">
+    </div>
+ </div>
+
+ <div class="row mb-3">
+    <label for="senha" class="col-sm-2 col-form-label col-form-label-sm">Senha</label>
+    <div class="col-sm-10">
+       <input type="text" class="form-control form-control-sm" id="senha" formControlName="senha" placeholder="Senha (Requerido)">
+    </div>
+ </div>
+
+ <div class="row mb-3">
+    <label for="senha" class="col-sm-2 col-form-label col-form-label-sm">Confirme a Senha</label>
+    <div class="col-sm-10">
+       <input type="text" class="form-control form-control-sm" id="confirmeSenha" formControlName="confirmeSenha" placeholder="Confirme a Senha (Requerido)">
+    </div>
+ </div>
+
+  <div class="row">    
+    <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+  </div>
+</form>
+</div>
