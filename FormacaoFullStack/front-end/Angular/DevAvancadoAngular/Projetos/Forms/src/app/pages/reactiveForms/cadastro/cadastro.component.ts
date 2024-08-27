@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Usuario } from '../../../models/usuario.model';
 import { CommonModule } from '@angular/common';
+import { utilsBr } from 'js-brasil';
+import { CustomValidators } from 'ng2-validation';
 
 @Component({
   selector: 'app-cadastro',
@@ -15,19 +17,25 @@ export class CadastroComponent implements OnInit {
   cadastroForm: FormGroup | any;
   usuario: Usuario | any;
   formResult: string = ' ';
+  MASKS = utilsBr.MASKS;
 
   constructor(private fb: FormBuilder) {
     
   }
 
   ngOnInit(): void {  
+
+    let senha = new FormControl('', [Validators.required, CustomValidators.rangeLength([6, 15])]);
+    let confirmeSenha = new FormControl('', [Validators.required, CustomValidators.rangeLength([6, 15]), CustomValidators.equal(senha)]);
+
+
     this.cadastroForm = this.fb.group({
       nome: ['', Validators.required,
         Validators.minLength(4)],
       cpf: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', Validators.required],
-      confirmeSenha: ['', Validators.required]
+      senha: senha,
+      confirmeSenha: confirmeSenha
     });
   }
 

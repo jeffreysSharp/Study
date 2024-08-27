@@ -21,3 +21,9 @@ ng update @angular/cli @angular/core
 
 YARN
 npm install -g yarn
+
+==NG-BRAZIL
+npm i ng-brazil
+npm i -S angular2-text-mask text-mask-addons
+npm i ng2-validation --save
+npm i js-brasil
