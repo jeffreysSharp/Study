@@ -27,3 +27,10 @@ npm i ng-brazil
 npm i -S angular2-text-mask text-mask-addons
 npm i ng2-validation --save
 npm i js-brasil
+
+
+==CREATE NEW PROJECT WHITH SPECIFIC VERSION ANGULAR
+ng --version
+npm uninstall -g @angular/cli
+npm cache clean --force
+npm install -g @angular/cli@8

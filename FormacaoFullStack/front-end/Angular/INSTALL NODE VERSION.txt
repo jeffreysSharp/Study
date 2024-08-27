@@ -1,0 +1,11 @@
+# NOTA:
+# Docker não é um gestor de pacote da Node.js.
+# Precisamos de certificar-nos de que já instalada no nosso sistema.
+# Seguir as instruções oficiais em https://docs.docker.com/desktop/
+# As imagens da Docker são fornecidas oficialmente em https://github.com/nodejs/docker-node/
+# puxa a imagem de Docker da Node.js
+docker pull node:10-alpine
+# verifica se a versão correta da Node.js está no ambiente
+docker run node:10-alpine node -v # deve imprimir `v10.24.1`
+# verifica se a versão correta da npm está no ambiente
+docker run node:10-alpine npm -v # deve imprimir `6.14.12`
