@@ -1,0 +1,72 @@
+<div class="container">
+<form (ngSubmit)="adicionarUsuario()" [formGroup]="cadastroForm">
+   
+   <div class="row mb-3">
+        <label for="nome" class="col-sm-2 col-form-label col-form-label-sm">Nome</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control form-control-sm" id="nome" formControlName="nome" [ngClass]="{'is-invalid': displayMessage.nome }" />
+                 <span  class="text-danger" *ngIf="displayMessage.nome">
+                     <p [innerHTML]="displayMessage.nome">
+                  </span>
+        </div>
+   </div>
+
+   <div class="row mb-3">
+      <label for="cpf" class="col-sm-2 col-form-label col-form-label-sm">CPF</label>
+      <div class="col-sm-10">
+          <input type="text" class="form-control form-control-sm" id="cpf" formControlName="cpf" [ngClass]="{'is-invalid': displayMessage.cpf }" />
+               <span  class="text-danger" *ngIf="displayMessage.cpf">
+                   <p [innerHTML]="displayMessage.cpf">
+                </span>
+      </div>
+   </div>
+
+   <div class="row mb-3">
+      <label for="email" class="col-sm-2 col-form-label col-form-label-sm">E-mail</label>
+      <div class="col-sm-10">
+          <input type="text" class="form-control form-control-sm" id="email" formControlName="email" [ngClass]="{'is-invalid': displayMessage.email }" />
+               <span  class="text-danger" *ngIf="displayMessage.email">
+                   <p [innerHTML]="displayMessage.email">
+                </span>
+      </div>
+   </div>
+
+   <div class="row mb-3">
+      <label for="senha" class="col-sm-2 col-form-label col-form-label-sm">Senha</label>
+      <div class="col-sm-10">
+          <input type="text" class="form-control form-control-sm" id="senha" formControlName="senha" [ngClass]="{'is-invalid': displayMessage.senha }" />
+               <span  class="text-danger" *ngIf="displayMessage.senha">
+                   <p [innerHTML]="displayMessage.senha">
+                </span>
+      </div>
+   </div>
+
+   <div class="row mb-3">
+      <label for="confirmeSenha" class="col-sm-2 col-form-label col-form-label-sm">Confirme a Senha</label>
+      <div class="col-sm-10">
+          <input type="text" class="form-control form-control-sm" id="confirmeSenha" formControlName="confirmeSenha" [ngClass]="{'is-invalid': displayMessage.confirmeSenha }" />
+               <span  class="text-danger" *ngIf="displayMessage.confirmeSenha">
+                   <p [innerHTML]="displayMessage.confirmeSenha">
+                </span>
+      </div>
+   </div>
+
+
+<div class="row mb-3">
+   <div class="col-sm-10">
+      <p>Formulário Válido: {{ cadastroForm.valid }}</p>
+      <p>Formulário Tocado: {{ cadastroForm.touched }}</p>
+      <p>Formulário Sujo: {{ cadastroForm.dirty }}</p>
+      <p>Formulário: {{ formResult }}</p>
+   </div>
+</div>
+
+
+ <div class="row mb-3">
+    <div class="col-sm-10">
+        <button type="submit" id="registrar" class="btn btn-success">Cadastrar</button>
+    </div>
+ </div>
+
+</form>
+</div>
