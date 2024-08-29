@@ -11,6 +11,7 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
 import { ProdutoDashboardComponent } from './produto-dashboard/produto-dashboard.component';
 import { ProdutoAppComponent } from './produto.app.component';
 import { ProdutoRoutingModule } from './produto.route';
+import { ProdutoResolve } from './services/produto.resolve';
 import { ProdutoService } from './services/produto.service';
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ProdutoService } from './services/produto.service';
     ],
     exports: [],
     providers: [
-        ProdutoService
+        ProdutoService,
+        ProdutoResolve
     ]
 })
 export class ProdutoModule { }
