@@ -13,6 +13,6 @@ export class ImageFormaterPipe implements PipeTransform {
             imagem = 'semCapa.jpg'
         }
 
-        return "/" + caminho + "/" + imagem
+        return "/" + caminho + "/" + imagem;
     }
 }
