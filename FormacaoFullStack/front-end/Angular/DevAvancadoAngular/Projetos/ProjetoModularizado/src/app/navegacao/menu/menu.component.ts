@@ -10,25 +10,25 @@ export class MenuComponent {
     {
       link: '/home',
       name: 'Home',
-      exact: true,
+      exact: false,
       admin: false
     },
     {
       link: '/cadastro',
       name: 'Cadastro',
-      exact: true,
+      exact: false,
       admin: false
     },
     {
       link: '/sobre',
       name: 'Sobre',
-      exact: true,
+      exact: false,
       admin: false
     },
     {
       link: '/produtos',
       name: 'Produtos',
-      exact: true,
+      exact: false,
       admin: false
     }
   ]
