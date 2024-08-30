@@ -20,4 +20,13 @@
     <div>
         Dados Unidade (service): {{ dadosUnidade }}
     </div>
+        <br>
+        <br>
+        <br>
+
+        <h2>Progress: {{ progress}}%</h2>
+        <p *ngIf="progress >= 100">Done processing {{ label }} of Angular Zone!</p>
+
+        <a class="btn btn-success" (click)="processWithingAngularZone()">Processar dentro da Zona do Angular</a>&nbsp;
+        <a class="btn btn-danger" (click)="processOutsideOfAngularZone()">Processar fora da Zona do Angular</a>
 </div>
