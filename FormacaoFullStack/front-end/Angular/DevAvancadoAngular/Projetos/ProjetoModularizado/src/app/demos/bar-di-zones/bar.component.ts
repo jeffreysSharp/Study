@@ -28,17 +28,21 @@ export class BarComponent implements OnInit {
     barBebida2: string;
     dadosUnidade: string;
 
+
+
     constructor(private barServices: BarServices,
         @Inject('ConfigManualUnidade') private ApiConfigManual: BarUnidadeConfig,
-        @Inject(BAR_UNIDADE_CONFIG) private ApiConfig: BarUnidadeConfig
+        @Inject(BAR_UNIDADE_CONFIG) private ApiConfig: BarUnidadeConfig,
+        private bebidaService: BebidaService
     ) { }
 
     ngOnInit(): void {
         this.barBebida1 = this.barServices.obterBebidas();
         this.configManual = this.ApiConfigManual;
         this.config = this.ApiConfig;
-
         this.dadosUnidade = this.barServices.obterUnidade();
+
+        this.barBebida2 = this.bebidaService.obterBebidas();
 
     }
 }
