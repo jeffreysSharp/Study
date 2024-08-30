@@ -16,7 +16,7 @@ export class BarServices {
     ) { }
 
     public obterUnidade(): string {
-        return 'Unidade ID: ' + this.config.unidadeId + ' Token: ' + this.config.unidadeToken
+        return 'Unidade ID: ' + this.config.unidadeId + ' Token: ' + this.config.unidadeToken;
     }
 
     obterBebidas(): string {

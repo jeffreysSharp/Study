@@ -7,7 +7,7 @@ import { BarFactory, BarServices, BebidaService } from "./bar.service";
     selector: 'app-bar',
     templateUrl: './bar.component.html',
     providers: [
-        { provide: BarServices, useClass: BarServices },
+        // { provide: BarServices, useClass: BarServices },
         {
             provide: BarServices, useFactory: BarFactory,
             deps: [
@@ -36,7 +36,9 @@ export class BarComponent implements OnInit {
     ngOnInit(): void {
         this.barBebida1 = this.barServices.obterBebidas();
         this.configManual = this.ApiConfigManual;
-        this.config = this.ApiConfig
+        this.config = this.ApiConfig;
+
+        this.dadosUnidade = this.barServices.obterUnidade();
 
     }
 }
