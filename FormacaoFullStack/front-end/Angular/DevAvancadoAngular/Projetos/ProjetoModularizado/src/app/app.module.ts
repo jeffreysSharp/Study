@@ -15,6 +15,7 @@ import { AuthGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
 
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import localePt from '@angular/common/locales/pt';
 import { BarModule } from './demos/bar-di-zones/bar.module';
 import { BarServices } from './demos/bar-di-zones/bar.service';
@@ -39,11 +40,15 @@ export const BAR_PROVIDERS: Provider[] = [
     FormsModule,
     ReactiveFormsModule,
     NavegacaoModule,
+    HttpClientModule,
     TextMask.TextMaskModule,
     NgBrazil,
     CustomFormsModule,
     AppRoutingModule,
-    BarModule
+    BarModule.foorRoot({
+      unidadeId: 1000,
+      unidadeToken: 'eca938c99a0e9ff91029dc'
+    })
   ],
   providers: [
     AuthGuard,
