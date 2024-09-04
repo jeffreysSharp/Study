@@ -21,6 +21,8 @@ import { BarModule } from './demos/bar-di-zones/bar.module';
 import { BarServices } from './demos/bar-di-zones/bar.service';
 import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
 import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
+import { TodoModule } from './demos/todo-list/todo.module';
+
 registerLocaleData(localePt);
 
 export const BAR_PROVIDERS: Provider[] = [
@@ -48,7 +50,8 @@ export const BAR_PROVIDERS: Provider[] = [
     BarModule.foorRoot({
       unidadeId: 1000,
       unidadeToken: 'eca938c99a0e9ff91029dc'
-    })
+    }),
+    TodoModule
   ],
   providers: [
     AuthGuard,

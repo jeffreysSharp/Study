@@ -34,3 +34,7 @@ ng --version
 npm uninstall -g @angular/cli
 npm cache clean --force
 npm install -g @angular/cli@8
+
+
+==JSON SERVER 
+npx json-server todo.db.json
