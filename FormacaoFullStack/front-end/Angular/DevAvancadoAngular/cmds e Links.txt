@@ -38,3 +38,8 @@ npm install -g @angular/cli@8
 
 ==JSON SERVER 
 npx json-server todo.db.json
+
+
+==TESTS
+ng test
+ng test --code-coverage
