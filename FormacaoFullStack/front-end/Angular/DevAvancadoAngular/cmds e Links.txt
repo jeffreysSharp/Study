@@ -50,4 +50,7 @@ ng g c conta/login
 ===CUSTOM VALIDATORS
 npm i ngx-custom-validators@9.1.0
 
+===ENVIRONMENT
+ng s
+ng --prod
 
