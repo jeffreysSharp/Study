@@ -47,4 +47,7 @@ ng g m conta
 ng g c conta/cadastro
 ng g c conta/login
 
+===CUSTOM VALIDATORS
+npm i ngx-custom-validators@9.1.0
+
 
