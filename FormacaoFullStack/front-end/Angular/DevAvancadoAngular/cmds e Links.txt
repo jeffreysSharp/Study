@@ -4,6 +4,8 @@ ng new projectName
 ==2: Installing Bootstrap from NPM
 npm install bootstrap
 *npm i bootstrap@5.3.3
+* npm i --save @ng-bootstrap/ng-bootstrap@6.0.2
+* npm i --save @angular/localize
 
 ==4: Bootstrap JavaScript Components with ngx-bootstrap
 npom install ngx-bootstrap --save
