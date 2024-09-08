@@ -1,7 +1,3 @@
-C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.csprojAssemblyReference.cache
-C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.AssemblyInfoInputs.cache
-C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.AssemblyInfo.cs
-C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\bin\Debug\netcoreapp3.1\appsettings.Production.Development.json
@@ -118,7 +114,11 @@ C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projeto
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\bin\Debug\netcoreapp3.1\DevIO.Data.dll
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\bin\Debug\netcoreapp3.1\DevIO.Business.pdb
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\bin\Debug\netcoreapp3.1\DevIO.Data.pdb
+C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.csprojAssemblyReference.cache
+C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.AssemblyInfoInputs.cache
+C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.AssemblyInfo.cs
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.RazorTargetAssemblyInfo.cache
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.csproj.CopyComplete
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Api\obj\Debug\netcoreapp3.1\staticwebassets\DevIO.Api.StaticWebAssets.Manifest.cache
