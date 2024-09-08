@@ -10,6 +10,7 @@ import { ContaAppComponent } from './conta.app.component';
 import { ContaRoutingModule } from './conta.route';
 import { LoginComponent } from './login/login.component';
 
+import { ContaGuard } from './services/conta.guard';
 import { ContaService } from './services/conta.service';
 
 
@@ -30,7 +31,8 @@ import { ContaService } from './services/conta.service';
     CustomFormsModule
   ],
   providers: [
-    ContaService
+    ContaService,
+    ContaGuard
   ]
 })
 export class ContaModule { }
