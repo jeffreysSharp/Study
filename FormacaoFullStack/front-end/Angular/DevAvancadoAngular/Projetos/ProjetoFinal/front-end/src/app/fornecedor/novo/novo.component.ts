@@ -1,12 +1,13 @@
 import { Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { utilsBr } from 'js-brasil';
+
 import { Observable, fromEvent, merge } from 'rxjs';
 
+import { utilsBr } from 'js-brasil';
+import { NgBrazilValidators } from 'ng-brazil';
 import { ToastrService } from 'ngx-toastr';
 
-import { NgBrazilValidators } from 'ng-brazil';
 import { DisplayMessage, GenericValidator, ValidationMessages } from 'src/app/utils/generic-form-validation';
 import { StringUtils } from 'src/app/utils/string-utils';
 import { CepConsulta } from '../models/endereco';
@@ -30,9 +31,9 @@ export class NovoComponent implements OnInit {
   displayMessage: DisplayMessage = {};
   textoDocumento: string = 'CPF (requerido)';
 
+  MASKS = utilsBr.MASKS;
   formResult: string = '';
 
-  MASKS = utilsBr.MASKS;
   mudancasNaoSalvas: boolean;
 
   constructor(private fb: FormBuilder,
@@ -84,7 +85,7 @@ export class NovoComponent implements OnInit {
       endereco: this.fb.group({
         logradouro: ['', [Validators.required]],
         numero: ['', [Validators.required]],
-        complemento: ['',],
+        complemento: [''],
         bairro: ['', [Validators.required]],
         cep: ['', [Validators.required, NgBrazilValidators.cep]],
         cidade: ['', [Validators.required]],
@@ -105,12 +106,11 @@ export class NovoComponent implements OnInit {
       });
 
     this.configurarElementosValidacao();
-
   }
 
   configurarElementosValidacao() {
     let controlBlurs: Observable<any>[] = this.formInputElements
-      .map((formcontrol: ElementRef) => fromEvent(formcontrol.nativeElement, 'blur'));
+      .map((formControl: ElementRef) => fromEvent(formControl.nativeElement, 'blur'));
 
     merge(...controlBlurs).subscribe(() => {
       this.validarFormulario();
@@ -124,14 +124,14 @@ export class NovoComponent implements OnInit {
 
   trocarValidacaoDocumento() {
     if (this.tipoFornecedorForm().value === "1") {
-      this.documento().clearAsyncValidators();
+      this.documento().clearValidators();
       this.documento().setValidators([Validators.required, NgBrazilValidators.cpf]);
-      this.textoDocumento = 'CPF (requerido';
+      this.textoDocumento = "CPF (requerido)";
     }
     else {
-      this.documento().clearAsyncValidators();
+      this.documento().clearValidators();
       this.documento().setValidators([Validators.required, NgBrazilValidators.cnpj]);
-      this.textoDocumento = 'CNPJ (requerido)';
+      this.textoDocumento = "CNPJ (requerido)";
     }
   }
 
@@ -147,6 +147,7 @@ export class NovoComponent implements OnInit {
 
     cep = StringUtils.somenteNumeros(cep);
     if (cep.length < 8) return;
+
     this.fornecedorService.consultarCep(cep)
       .subscribe(
         cepRetorno => this.preencherEnderecoConsulta(cepRetorno),
@@ -154,6 +155,7 @@ export class NovoComponent implements OnInit {
   }
 
   preencherEnderecoConsulta(cepConsulta: CepConsulta) {
+
     this.fornecedorForm.patchValue({
       endereco: {
         logradouro: cepConsulta.logradouro,
@@ -182,14 +184,14 @@ export class NovoComponent implements OnInit {
           sucesso => { this.processarSucesso(sucesso) },
           falha => { this.processarFalha(falha) }
         );
-
-      this.mudancasNaoSalvas = false;
     }
   }
 
   processarSucesso(response: any) {
     this.fornecedorForm.reset();
     this.errors = [];
+
+    this.mudancasNaoSalvas = false;
 
     let toast = this.toastr.success('Fornecedor cadastrado com sucesso!', 'Sucesso!');
     if (toast) {

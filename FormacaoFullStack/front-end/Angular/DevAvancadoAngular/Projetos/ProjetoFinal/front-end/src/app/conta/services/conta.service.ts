@@ -1,36 +1,33 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Usuario } from '../models/usuario';
+
+import { Observable } from 'rxjs';
 import { catchError, map } from "rxjs/operators";
-import { BaseService } from "src/app/services/base.service";
-import { IUsuario } from "../models/usuario.interface";
+import { BaseService } from 'src/app/services/base.service';
 
 @Injectable()
 export class ContaService extends BaseService {
 
-  constructor(private http: HttpClient
-  ) { super(); }
+    constructor(private http: HttpClient) { super(); }
 
-  registrar(usuario: IUsuario): Observable<IUsuario> {
+    registrarUsuario(usuario: Usuario): Observable<Usuario> {
+        let response = this.http
+            .post(this.UrlServiceV1 + 'nova-conta', usuario, this.ObterHeaderJson())
+            .pipe(
+                map(this.extractData),
+                catchError(this.serviceError));
 
-    let response = this.http
-      .post(this.urlServicev1 + 'nova-conta', usuario, this.obterHeadeerJson())
-      .pipe(
-        map(this.extractData),
-        catchError(this.serviceError));
+        return response;
+    }
 
-    return response;
+    login(usuario: Usuario): Observable<Usuario> {
+        let response = this.http
+            .post(this.UrlServiceV1 + 'entrar', usuario, this.ObterHeaderJson())
+            .pipe(
+                map(this.extractData),
+                catchError(this.serviceError));
 
-  }
-
-  login(usuario: IUsuario): Observable<IUsuario> {
-    let response = this.http
-      .post(this.urlServicev1 + 'entrar', usuario, this.obterHeadeerJson())
-      .pipe(
-        map(this.extractData),
-        catchError(this.serviceError));
-
-    return response;
-  }
-
+        return response;
+    }
 }
