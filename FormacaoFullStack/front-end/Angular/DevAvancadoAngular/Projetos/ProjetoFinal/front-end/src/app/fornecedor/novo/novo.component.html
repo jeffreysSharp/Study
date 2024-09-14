@@ -25,21 +25,21 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label">Documento</label>
-                    <div>
-                        <input class="form-control" id="documento" type="text" placeholder="(requerido)" formControlName="documento" cpf [textMask]="{ mask: MASKS.cpf.textMask }" [ngClass]="{'is-invalid': displayMessage.documento }" />
-
-                        <span class="text-danger" *ngIf="displayMessage.documento">
-                            <p [innerHTML]="displayMessage.documento"></p>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="form-group">
                     <label class="control-label" for="TipoFornecedor">Tipo</label><br>
                     <input type="radio" value="1" id="tipoFornecedor" formControlName="tipoFornecedor" name="tipoFornecedor"> Pessoa Física<br>
                     <input type="radio" value="2" id="tipoFornecedor" formControlName="tipoFornecedor" name="tipoFornecedor"> Pessoa Jurídica
                 </div>
+
+                <div class="form-group">
+                  <label class="control-label">Documento</label>
+                  <div>
+                      <input class="form-control" id="documento" type="text" placeholder="{{ textoDocumento }}" formControlName="documento"  [textMask]="tipoFornecedorForm().value === '1' ? { mask: MASKS.cpf.textMask } : { mask: MASKS.cnpj.textMask }" [ngClass]="{'is-invalid': displayMessage.documento }" />
+
+                      <span class="text-danger" *ngIf="displayMessage.documento">
+                          <p [innerHTML]="displayMessage.documento"></p>
+                      </span>
+                  </div>
+              </div>
 
                 <div class="form-group form-check">
                     <label class="form-check-label">
@@ -47,13 +47,15 @@
                     </label>
                 </div>
 
+
+
                 <h4>Endereço</h4>
                 <hr>
                 <div formGroupName="endereco">
                     <div class="form-group">
                         <label class="control-label">CEP</label>
                         <div>
-                            <input class="form-control" id="cep" type="text" placeholder="CEP (requerido)" formControlName="cep" [ngClass]="{ 'is-invalid': displayMessage.cep }" />
+                            <input class="form-control" id="cep" type="text" placeholder="CEP (requerido)" (blur)="buscarCep($event.target.value)" formControlName="cep" cep [textMask]="{ mask: MASKS.cep.textMask }" [ngClass]="{ 'is-invalid': displayMessage.cep }" />
                             <span class="text-danger" *ngIf="displayMessage.cep">
                             <p [innerHTML]="displayMessage.cep"></p>
                         </span>

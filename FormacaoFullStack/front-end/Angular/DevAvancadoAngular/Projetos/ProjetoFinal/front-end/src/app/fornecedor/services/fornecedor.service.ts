@@ -2,9 +2,10 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 import { Observable } from "rxjs";
-import { catchError } from "rxjs/operators";
+import { catchError, map } from "rxjs/operators";
 
 import { BaseService } from 'src/app/services/base.service';
+import { CepConsulta } from "../models/endereco";
 import { Fornecedor } from '../models/fornecedor';
 
 @Injectable()
@@ -32,7 +33,10 @@ export class FornecedorService extends BaseService {
   }
 
   novoFornecedor(fornecedor: Fornecedor): Observable<Fornecedor> {
-    return new Observable<Fornecedor>();
+    return this.http.post(this.urlServicev1 + 'fornecedores', fornecedor, this.obterAuthHeaderJson())
+      .pipe(
+        map(super.extractData),
+        catchError(super.serviceError));
   }
 
   atualizarFornecedor(fornecedor: Fornecedor): Observable<Fornecedor> {
@@ -41,5 +45,11 @@ export class FornecedorService extends BaseService {
 
   excluirFornecedor(id: string): Observable<Fornecedor> {
     return new Observable<Fornecedor>();
+  }
+
+  consultarCep(cep: string): Observable<CepConsulta> {
+    return this.http
+      .get<CepConsulta>(`https://viacep.com.br/ws/${cep}/json/`)
+      .pipe(catchError(super.serviceError))
   }
 }
