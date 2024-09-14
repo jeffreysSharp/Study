@@ -63,3 +63,6 @@ npm i --save @angular/animations@9.1.0
 npm i ng-brazil@2.0.10
 npm i -S angular2-text-mask text-mask-addons@3.8.0
 
+===UPLOAD IMAGENS
+npm i ngx-image-cropper@3.1.7 --save
+

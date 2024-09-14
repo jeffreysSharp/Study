@@ -11,7 +11,7 @@ export interface Produto {
   nomeFornecedor: string
 }
 
-export interface Fornecedor{
+export interface Fornecedor {
   id: string,
   nome: string,
 }
