@@ -1,15 +1,15 @@
-import { Component, OnInit, AfterViewInit, ViewChildren, ElementRef } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl, FormControlName } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
+import { FormBuilder, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Observable, fromEvent, merge } from 'rxjs';
 
 import { CustomValidators } from 'ngx-custom-validators';
 import { ToastrService } from 'ngx-toastr';
 
+import { DisplayMessage, GenericValidator, ValidationMessages } from 'src/app/utils/generic-form-validation';
 import { Usuario } from '../models/usuario';
 import { ContaService } from '../services/conta.service';
-import { ValidationMessages, GenericValidator, DisplayMessage } from 'src/app/utils/generic-form-validation';
 
 
 @Component({
@@ -28,9 +28,12 @@ export class LoginComponent implements OnInit {
   genericValidator: GenericValidator;
   displayMessage: DisplayMessage = {};
 
+  returnUrl: string;
+
   constructor(private fb: FormBuilder,
     private contaService: ContaService,
     private router: Router,
+    private route: ActivatedRoute,
     private toastr: ToastrService) {
 
     this.validationMessages = {
@@ -44,6 +47,7 @@ export class LoginComponent implements OnInit {
       }
     };
 
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'];
     this.genericValidator = new GenericValidator(this.validationMessages);
   }
 
@@ -69,10 +73,10 @@ export class LoginComponent implements OnInit {
       this.usuario = Object.assign({}, this.usuario, this.loginForm.value);
 
       this.contaService.login(this.usuario)
-      .subscribe(
-          sucesso => {this.processarSucesso(sucesso)},
-          falha => {this.processarFalha(falha)}
-      );
+        .subscribe(
+          sucesso => { this.processarSucesso(sucesso) },
+          falha => { this.processarFalha(falha) }
+        );
     }
   }
 
@@ -83,14 +87,16 @@ export class LoginComponent implements OnInit {
     this.contaService.LocalStorage.salvarDadosLocaisUsuario(response);
 
     let toast = this.toastr.success('Login realizado com Sucesso!', 'Bem vindo!!!');
-    if(toast){
+    if (toast) {
       toast.onHidden.subscribe(() => {
-        this.router.navigate(['/home']);
+        this.returnUrl
+          ? this.router.navigate([this.returnUrl])
+          : this.router.navigate(['/home']);
       });
     }
   }
 
-  processarFalha(fail: any){
+  processarFalha(fail: any) {
     this.errors = fail.error.errors;
     this.toastr.error('Ocorreu um erro!', 'Opa :(');
   }
