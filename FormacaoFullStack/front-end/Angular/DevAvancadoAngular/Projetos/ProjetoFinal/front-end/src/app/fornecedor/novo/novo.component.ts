@@ -2,13 +2,12 @@ import { Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Observable, fromEvent, merge } from 'rxjs';
 
 import { utilsBr } from 'js-brasil';
 import { NgBrazilValidators } from 'ng-brazil';
 import { ToastrService } from 'ngx-toastr';
 
-import { DisplayMessage, GenericValidator, ValidationMessages } from 'src/app/utils/generic-form-validation';
+import { FormBaseComponent } from 'src/app/base-components/form-base.component';
 import { StringUtils } from 'src/app/utils/string-utils';
 import { CepConsulta } from '../models/endereco';
 import { Fornecedor } from '../models/fornecedor';
@@ -18,7 +17,7 @@ import { FornecedorService } from '../services/fornecedor.service';
   selector: 'app-novo',
   templateUrl: './novo.component.html'
 })
-export class NovoComponent implements OnInit {
+export class NovoComponent extends FormBaseComponent implements OnInit {
 
   @ViewChildren(FormControlName, { read: ElementRef }) formInputElements: ElementRef[];
 
@@ -26,13 +25,9 @@ export class NovoComponent implements OnInit {
   fornecedorForm: FormGroup;
   fornecedor: Fornecedor = new Fornecedor();
 
-  validationMessages: ValidationMessages;
-  genericValidator: GenericValidator;
-  displayMessage: DisplayMessage = {};
   textoDocumento: string = 'CPF (requerido)';
 
   MASKS = utilsBr.MASKS;
-  formResult: string = '';
 
   mudancasNaoSalvas: boolean;
 
@@ -41,6 +36,7 @@ export class NovoComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService) {
 
+    super();
     this.validationMessages = {
       nome: {
         required: 'Informe o Nome',
@@ -71,7 +67,7 @@ export class NovoComponent implements OnInit {
       }
     };
 
-    this.genericValidator = new GenericValidator(this.validationMessages);
+    super.configurarMensagensValidacaoBase(this.validationMessages);
   }
 
   ngOnInit() {
@@ -101,20 +97,11 @@ export class NovoComponent implements OnInit {
     this.tipoFornecedorForm().valueChanges
       .subscribe(() => {
         this.trocarValidacaoDocumento();
-        this.configurarElementosValidacao();
-        this.validarFormulario();
+        super.configurarValidacaoFormularioBase(this.formInputElements, this.fornecedorForm);
+        super.validarFormulario(this.fornecedorForm);
       });
 
-    this.configurarElementosValidacao();
-  }
-
-  configurarElementosValidacao() {
-    let controlBlurs: Observable<any>[] = this.formInputElements
-      .map((formControl: ElementRef) => fromEvent(formControl.nativeElement, 'blur'));
-
-    merge(...controlBlurs).subscribe(() => {
-      this.validarFormulario();
-    });
+    super.configurarValidacaoFormularioBase(this.formInputElements, this.fornecedorForm);
   }
 
   validarFormulario() {
@@ -171,8 +158,6 @@ export class NovoComponent implements OnInit {
     if (this.fornecedorForm.dirty && this.fornecedorForm.valid) {
 
       this.fornecedor = Object.assign({}, this.fornecedor, this.fornecedorForm.value);
-      this.formResult = JSON.stringify(this.fornecedor);
-
       this.fornecedor.endereco.cep = StringUtils.somenteNumeros(this.fornecedor.endereco.cep);
       this.fornecedor.documento = StringUtils.somenteNumeros(this.fornecedor.documento);
 

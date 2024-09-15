@@ -1,8 +1,8 @@
-import { ElementRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { utilsBr } from 'js-brasil';
 
+import { ElementRef } from '@angular/core';
 import { FormBaseComponent } from '../base-components/form-base.component';
 import { IFornecedor } from './models/fornecedor.interface';
 import { IProduto } from './models/produto.interface';
