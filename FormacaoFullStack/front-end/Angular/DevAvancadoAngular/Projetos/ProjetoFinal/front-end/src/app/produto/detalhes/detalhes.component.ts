@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Produto } from '../models/produto';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { IProduto } from '../models/produto.interface';
 
 @Component({
   selector: 'app-detalhes',
@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class DetalhesComponent {
 
   imagens: string = environment.imagensUrl;
-  produto: Produto;
+  produto: IProduto;
 
   constructor(private route: ActivatedRoute) {
 

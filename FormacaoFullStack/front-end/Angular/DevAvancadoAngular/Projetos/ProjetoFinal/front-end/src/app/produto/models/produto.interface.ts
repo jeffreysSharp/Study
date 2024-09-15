@@ -1,4 +1,4 @@
-export interface Produto {
+export interface IProduto {
   id: string,
   nome: string,
   descricao: string,
@@ -11,7 +11,3 @@ export interface Produto {
   nomeFornecedor: string
 }
 
-export interface Fornecedor {
-  id: string,
-  nome: string,
-}
