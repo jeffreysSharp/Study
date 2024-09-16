@@ -2,12 +2,10 @@
 ng new projectName
 
 ==2: Installing Bootstrap from NPM
-npm install bootstrap
-*npm i bootstrap@5.3.3
+* npm i --save @ng-bootstrap/ng-bootstrap@6.0.2
+* npm i --save @angular/localize
 
-==4: Bootstrap JavaScript Components with ngx-bootstrap
-npom install ngx-bootstrap --save
-
+== ANGULAR CLI Versions
 npm uninstall -g @angular/cli
 npm install -g @angular/cli@7.1.0
 
@@ -34,3 +32,51 @@ ng --version
 npm uninstall -g @angular/cli
 npm cache clean --force
 npm install -g @angular/cli@8
+
+
+==JSON SERVER 
+npx json-server todo.db.json
+
+
+==TESTS
+ng test
+ng test --code-coverage
+
+===MODULES
+ng g m conta
+ng g c conta/cadastro
+ng g c conta/login
+
+===CUSTOM VALIDATORS
+npm i ngx-custom-validators@9.1.0
+
+===ENVIRONMENT
+ng s
+ng --prod
+
+===TOASTR
+npm i --save ngx-toastr@12.0.1
+npm i --save @angular/animations@9.1.0
+
+
+===NG_BRAZIL
+npm i ng-brazil@2.0.10
+npm i -S angular2-text-mask text-mask-addons@3.8.0
+
+===UPLOAD IMAGENS
+npm i ngx-image-cropper@3.1.7 --save
+
+===TESTE AUTOMATIZADO
+ng e2e --suite produto
+
+===DEPLOY NO DOCKER
+docker.hub
+portainer.io
+
+
+docker pull node
+
+docker build -t meusprodutos .
+
+docker run  --name meusprodutos -d -p 8080:80 meusprodutos
+

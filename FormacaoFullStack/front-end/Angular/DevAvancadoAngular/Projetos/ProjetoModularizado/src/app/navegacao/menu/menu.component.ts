@@ -10,25 +10,49 @@ export class MenuComponent {
     {
       link: '/home',
       name: 'Home',
-      exact: true,
+      exact: false,
       admin: false
     },
     {
       link: '/cadastro',
       name: 'Cadastro',
-      exact: true,
+      exact: false,
       admin: false
     },
     {
       link: '/sobre',
       name: 'Sobre',
-      exact: true,
+      exact: false,
       admin: false
     },
     {
       link: '/produtos',
       name: 'Produtos',
-      exact: true,
+      exact: false,
+      admin: false
+    },
+    {
+      link: '/filmes',
+      name: 'Filmes',
+      exact: false,
+      admin: false
+    },
+    {
+      link: '/bar',
+      name: 'Bar',
+      exact: false,
+      admin: false
+    },
+    {
+      link: '/todo',
+      name: 'To Do',
+      exact: false,
+      admin: false
+    },
+    {
+      link: '/admin',
+      name: 'Admin',
+      exact: false,
       admin: false
     }
   ]
