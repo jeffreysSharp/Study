@@ -1,4 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppModule } from 'src/app/app.module';
+import { ProdutoModule } from '../produto.module';
+import { ProdutoService } from '../services/produto.service';
 
 import { NovoComponent } from './novo.component';
 
@@ -6,12 +10,12 @@ describe('NovoComponent', () => {
   let component: NovoComponent;
   let fixture: ComponentFixture<NovoComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
-      declarations: [ NovoComponent ]
+      imports: [ProdutoModule, AppModule]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NovoComponent);

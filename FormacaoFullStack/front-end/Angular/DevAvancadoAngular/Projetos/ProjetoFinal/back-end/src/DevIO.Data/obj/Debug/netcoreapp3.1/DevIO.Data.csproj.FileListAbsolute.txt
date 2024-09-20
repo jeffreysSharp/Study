@@ -9,3 +9,16 @@ C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projeto
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csproj.CopyComplete
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.dll
 C:\Projetos\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.pdb
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Data.deps.json
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Data.dll
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Data.pdb
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Business.dll
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Business.pdb
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csproj.AssemblyReference.cache
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.AssemblyInfoInputs.cache
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.AssemblyInfo.cs
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csproj.CoreCompileInputs.cache
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csproj.CopyComplete
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.dll
+C:\Study\FormacaoFullStack\front-end\Angular\DevAvancadoAngular\Projetos\ProjetoFinal\back-end\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.pdb

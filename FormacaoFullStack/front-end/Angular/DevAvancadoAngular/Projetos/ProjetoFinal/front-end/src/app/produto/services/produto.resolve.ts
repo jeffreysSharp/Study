@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
-import { IProduto } from '../models/produto.interface';
+import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { Produto } from '../models/produto';
 import { ProdutoService } from './produto.service';
 
 @Injectable()
-export class ProdutoResolve implements Resolve<IProduto> {
+export class ProdutoResolve implements Resolve<Produto> {
 
-  constructor(private produtoService: ProdutoService) { }
+    constructor(private produtoService: ProdutoService) { }
 
-  resolve(route: ActivatedRouteSnapshot) {
-    return this.produtoService.obterPorId(route.params['id']);
-  }
+    resolve(route: ActivatedRouteSnapshot) {
+        return this.produtoService.obterPorId(route.params['id']);
+    }
 }

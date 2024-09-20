@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { IProduto } from '../models/produto.interface';
+import { Produto } from '../models/produto';
 import { ProdutoService } from '../services/produto.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-lista',
@@ -11,7 +11,7 @@ export class ListaComponent implements OnInit {
 
   imagens: string = environment.imagensUrl;
 
-  public produtos: IProduto[];
+  public produtos: Produto[];
   errorMessage: string;
 
   constructor(private produtoService: ProdutoService) { }

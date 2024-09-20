@@ -68,7 +68,7 @@
                 <div class="form-group">
                     <label class="control-label">Valor</label>
                     <div>
-                        <input class="form-control" id="valor" type="text" placeholder="Valor (requerido)" formControlName="valor" [textMask]="{mask: MASKS.number.textMask}" [ngClass]="{'is-invalid': displayMessage.valor }" />
+                        <input class="form-control" id="valor" type="text" placeholder="Valor (requerido)" formControlName="valor" [ngClass]="{'is-invalid': displayMessage.valor }" />
                         <span class="text-danger" *ngIf="displayMessage.valor">
                             <p [innerHTML]="displayMessage.valor"></p>
                         </span>

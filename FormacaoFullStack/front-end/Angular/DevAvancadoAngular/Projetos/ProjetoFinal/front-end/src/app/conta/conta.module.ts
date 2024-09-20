@@ -11,7 +11,7 @@ import { ContaAppComponent } from './conta.app.component';
 import { ContaRoutingModule } from './conta.route';
 import { ContaService } from './services/conta.service';
 
-import { CustomFormsModule } from 'ngx-custom-validators'
+import { NarikCustomValidatorsModule } from '@narik/custom-validators';
 import { ContaGuard } from './services/conta.guard';
 
 @NgModule({
@@ -27,7 +27,7 @@ import { ContaGuard } from './services/conta.guard';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CustomFormsModule
+    NarikCustomValidatorsModule
   ],
   providers: [
     ContaService,

@@ -4,17 +4,17 @@ import { ProdutoService } from '../services/produto.service';
 
 import { ToastrService } from 'ngx-toastr';
 
+import { Produto } from '../models/produto';
 import { environment } from 'src/environments/environment';
-import { IProduto } from '../models/produto.interface';
 
 @Component({
   selector: 'app-excluir',
   templateUrl: './excluir.component.html'
 })
-export class ExcluirComponent {
+export class ExcluirComponent  {
 
   imagens: string = environment.imagensUrl;
-  produto: IProduto;
+  produto: Produto;
 
   constructor(private produtoService: ProdutoService,
     private route: ActivatedRoute,
@@ -27,8 +27,8 @@ export class ExcluirComponent {
   public excluirProduto() {
     this.produtoService.excluirProduto(this.produto.id)
       .subscribe(
-        evento => { this.sucessoExclusao(evento) },
-        () => { this.falha() }
+      evento => { this.sucessoExclusao(evento) },
+      ()     => { this.falha() }
       );
   }
 

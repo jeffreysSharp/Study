@@ -1,17 +1,14 @@
-import { Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChildren, ElementRef } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControlName, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
-import { utilsBr } from 'js-brasil';
-import { NgBrazilValidators } from 'ng-brazil';
 import { ToastrService } from 'ngx-toastr';
 
-import { FormBaseComponent } from 'src/app/base-components/form-base.component';
-import { StringUtils } from 'src/app/utils/string-utils';
-import { CepConsulta } from '../models/endereco';
 import { Fornecedor } from '../models/fornecedor';
 import { FornecedorService } from '../services/fornecedor.service';
+import { CepConsulta } from '../models/endereco';
+import { StringUtils } from 'src/app/utils/string-utils';
+import { FormBaseComponent } from 'src/app/base-components/form-base.component';
 
 @Component({
   selector: 'app-novo',
@@ -26,17 +23,15 @@ export class NovoComponent extends FormBaseComponent implements OnInit {
   fornecedor: Fornecedor = new Fornecedor();
 
   textoDocumento: string = 'CPF (requerido)';
-
-  MASKS = utilsBr.MASKS;
-
-  mudancasNaoSalvas: boolean;
-
+  formResult: string = '';
+  
   constructor(private fb: FormBuilder,
     private fornecedorService: FornecedorService,
     private router: Router,
     private toastr: ToastrService) {
 
     super();
+
     this.validationMessages = {
       nome: {
         required: 'Informe o Nome',
@@ -74,7 +69,7 @@ export class NovoComponent extends FormBaseComponent implements OnInit {
 
     this.fornecedorForm = this.fb.group({
       nome: ['', [Validators.required]],
-      documento: ['', [Validators.required, NgBrazilValidators.cpf]],
+      documento: ['', [Validators.required]],
       ativo: ['', [Validators.required]],
       tipoFornecedor: ['', [Validators.required]],
 
@@ -83,7 +78,7 @@ export class NovoComponent extends FormBaseComponent implements OnInit {
         numero: ['', [Validators.required]],
         complemento: [''],
         bairro: ['', [Validators.required]],
-        cep: ['', [Validators.required, NgBrazilValidators.cep]],
+        cep: ['', [Validators.required]],
         cidade: ['', [Validators.required]],
         estado: ['', [Validators.required]]
       })
@@ -97,27 +92,22 @@ export class NovoComponent extends FormBaseComponent implements OnInit {
     this.tipoFornecedorForm().valueChanges
       .subscribe(() => {
         this.trocarValidacaoDocumento();
-        super.configurarValidacaoFormularioBase(this.formInputElements, this.fornecedorForm);
+        super.configurarValidacaoFormularioBase(this.formInputElements, this.fornecedorForm)
         super.validarFormulario(this.fornecedorForm);
       });
 
-    super.configurarValidacaoFormularioBase(this.formInputElements, this.fornecedorForm);
+      super.configurarValidacaoFormularioBase(this.formInputElements, this.fornecedorForm)
   }
-
-  validarFormulario() {
-    this.displayMessage = this.genericValidator.processarMensagens(this.fornecedorForm);
-    this.mudancasNaoSalvas = true;
-  }
-
+    
   trocarValidacaoDocumento() {
     if (this.tipoFornecedorForm().value === "1") {
       this.documento().clearValidators();
-      this.documento().setValidators([Validators.required, NgBrazilValidators.cpf]);
+      this.documento().setValidators([Validators.required]);
       this.textoDocumento = "CPF (requerido)";
     }
     else {
       this.documento().clearValidators();
-      this.documento().setValidators([Validators.required, NgBrazilValidators.cnpj]);
+      this.documento().setValidators([Validators.required]);
       this.textoDocumento = "CNPJ (requerido)";
     }
   }
@@ -158,9 +148,10 @@ export class NovoComponent extends FormBaseComponent implements OnInit {
     if (this.fornecedorForm.dirty && this.fornecedorForm.valid) {
 
       this.fornecedor = Object.assign({}, this.fornecedor, this.fornecedorForm.value);
+      this.formResult = JSON.stringify(this.fornecedor);
+
       this.fornecedor.endereco.cep = StringUtils.somenteNumeros(this.fornecedor.endereco.cep);
       this.fornecedor.documento = StringUtils.somenteNumeros(this.fornecedor.documento);
-
       // forçando o tipo fornecedor ser serializado como INT
       this.fornecedor.tipoFornecedor = parseInt(this.fornecedor.tipoFornecedor.toString());
 

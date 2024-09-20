@@ -1,14 +1,14 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
-import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, AfterViewInit, ViewChildren, ElementRef } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControl, FormControlName } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
-import { CustomValidators } from 'ngx-custom-validators';
+import { CustomValidators } from '@narik/custom-validators';
 import { ToastrService } from 'ngx-toastr';
 
-import { FormBaseComponent } from 'src/app/base-components/form-base.component';
 import { Usuario } from '../models/usuario';
 import { ContaService } from '../services/conta.service';
+
+import { FormBaseComponent } from 'src/app/base-components/form-base.component';
 
 @Component({
   selector: 'app-cadastro',
@@ -21,8 +21,6 @@ export class CadastroComponent extends FormBaseComponent implements OnInit, Afte
   errors: any[] = [];
   cadastroForm: FormGroup;
   usuario: Usuario;
-
-  mudancasNaoSalvas: boolean;
 
   constructor(private fb: FormBuilder,
     private contaService: ContaService,

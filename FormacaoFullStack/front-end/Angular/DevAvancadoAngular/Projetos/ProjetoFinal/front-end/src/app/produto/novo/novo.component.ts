@@ -1,14 +1,15 @@
-import { Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
-import { FormBuilder, FormControlName, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChildren, ElementRef } from '@angular/core';
+import { FormBuilder, Validators, FormControlName } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { Observable, fromEvent, merge } from 'rxjs';
 
-import { Dimensions, ImageCroppedEvent, ImageTransform } from 'ngx-image-cropper';
 import { ToastrService } from 'ngx-toastr';
+import { ImageCroppedEvent, ImageTransform, Dimensions } from 'ngx-image-cropper';
 
+import { ProdutoService } from '../services/produto.service';
 import { CurrencyUtils } from 'src/app/utils/currency-utils';
 import { ProdutoBaseComponent } from '../produto-form.base.component';
-import { ProdutoService } from '../services/produto.service';
 
 
 @Component({
@@ -64,10 +65,10 @@ export class NovoComponent extends ProdutoBaseComponent implements OnInit {
       this.produto.valor = CurrencyUtils.StringParaDecimal(this.produto.valor);
 
       this.produtoService.novoProduto(this.produto)
-        .subscribe(
-          sucesso => { this.processarSucesso(sucesso) },
-          falha => { this.processarFalha(falha) }
-        );
+        .subscribe({
+          next: (sucesso: any) => { this.processarSucesso(sucesso) },
+          error: (falha: any) => { this.processarFalha(falha) }
+        });
 
       this.mudancasNaoSalvas = false;
     }
@@ -94,22 +95,17 @@ export class NovoComponent extends ProdutoBaseComponent implements OnInit {
     this.imageChangedEvent = event;
     this.imagemNome = event.currentTarget.files[0].name;
   }
-
   imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
   }
-
   imageLoaded() {
     this.showCropper = true;
   }
-
   cropperReady(sourceImageDimensions: Dimensions) {
     console.log('Cropper ready', sourceImageDimensions);
   }
-
   loadImageFailed() {
     this.errors.push('O formato do arquivo ' + this.imagemNome + ' não é aceito.');
   }
-
 }
 

@@ -1,50 +1,45 @@
+import { Produto, Fornecedor } from './models/produto';
 import { FormGroup } from '@angular/forms';
-
-import { utilsBr } from 'js-brasil';
-
 import { ElementRef } from '@angular/core';
+
 import { FormBaseComponent } from '../base-components/form-base.component';
-import { IFornecedor } from './models/fornecedor.interface';
-import { IProduto } from './models/produto.interface';
 
 export abstract class ProdutoBaseComponent extends FormBaseComponent {
+    
+    produto: Produto;
+    fornecedores: Fornecedor[];
+    errors: any[] = [];
+    produtoForm: FormGroup;
 
-  produto: IProduto;
-  fornecedores: IFornecedor[];
-  errors: any[] = [];
-  produtoForm: FormGroup;
+    constructor() {
+        super();
 
-  MASKS = utilsBr.MASKS;
+        this.validationMessages = {
+            fornecedorId: {
+                required: 'Escolha um fornecedor',
+            },
+            nome: {
+                required: 'Informe o Nome',
+                minlength: 'Mínimo de 2 caracteres',
+                maxlength: 'Máximo de 200 caracteres'
+            },
+            descricao: {
+                required: 'Informe a Descrição',
+                minlength: 'Mínimo de 2 caracteres',
+                maxlength: 'Máximo de 1000 caracteres'
+            },
+            imagem: {
+                required: 'Informe a Imagem',
+            },
+            valor: {
+                required: 'Informe o Valor',
+            }
+        }
 
-  constructor() {
-    super();
-
-    this.validationMessages = {
-      fornecedorId: {
-        required: 'Escolha um fornecedor',
-      },
-      nome: {
-        required: 'Informe o Nome',
-        minlength: 'Mínimo de 2 caracteres',
-        maxlength: 'Máximo de 200 caracteres'
-      },
-      descricao: {
-        required: 'Informe a Descrição',
-        minlength: 'Mínimo de 2 caracteres',
-        maxlength: 'Máximo de 1000 caracteres'
-      },
-      imagem: {
-        required: 'Informe a Imagem',
-      },
-      valor: {
-        required: 'Informe o Valor',
-      }
+        super.configurarMensagensValidacaoBase(this.validationMessages);
     }
 
-    super.configurarMensagensValidacaoBase(this.validationMessages);
-  }
-
-  protected configurarValidacaoFormulario(formInputElements: ElementRef[]) {
-    super.configurarValidacaoFormularioBase(formInputElements, this.produtoForm);
-  }
+    protected configurarValidacaoFormulario(formInputElements: ElementRef[]) {
+        super.configurarValidacaoFormularioBase(formInputElements, this.produtoForm);
+    }
 }
